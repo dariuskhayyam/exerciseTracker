@@ -2,6 +2,14 @@ body{
     margin: 0;
 }
 
+form{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+}
+
 #Header{
     padding: 2em;
     background-color: green;
