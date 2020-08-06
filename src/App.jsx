@@ -1,9 +1,14 @@
 import React from "react"
+import Header from "./components/Header"
+import "./components/Styles.css"
 
 class App extends React.Component{
     render(){
         return(
-            <h2>Hello World!</h2>
+            <div>
+                <Header />
+
+            </div>
         )
     }
 }
