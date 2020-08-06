@@ -20,7 +20,7 @@ form{
 
 .contentTable{
     border-collapse: collapse;
-    margin: 2em;
+    margin: 1em;
     font-size: 2em;
     min-width: 800px;
 }
@@ -44,4 +44,8 @@ form{
 .container{
     display: flex;
     justify-content: center;
+    align-items: center;
+    justify-self: center;
+    width: 800;
+    flex-wrap: wrap;
 }

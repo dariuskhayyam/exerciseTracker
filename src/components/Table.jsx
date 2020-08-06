@@ -2,6 +2,9 @@ import React from "react"
 
 class Table extends React.Component{
     render(){
+        
+        let {pushUps, squats, sitUps, pullUps, date} = this.props
+
         return(
             <div>
                 <table className="contentTable">
@@ -16,14 +19,16 @@ class Table extends React.Component{
                     </thead>
                     <tbody>
                         <tr>
-                            <td>05-08-2020</td>
-                            <td>15</td>
-                            <td>61</td>
-                            <td>60</td>
-                            <td>10</td>
+                            <td>{date}</td>
+                            <td>{pushUps}</td>
+                            <td>{squats}</td>
+                            <td>{sitUps}</td>
+                            <td>{pullUps}</td>
                         </tr>
                     </tbody>
+                    <br />
                 </table>
+                
             </div>
         )
     }
