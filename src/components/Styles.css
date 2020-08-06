@@ -5,6 +5,8 @@ body{
 form{
     padding-top: 1em;
     padding-bottom: 1em;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
     background-color: #f4f4f4;
     display: flex;
     justify-content: space-between;
@@ -14,4 +16,32 @@ form{
     padding: 2em;
     background-color: green;
     text-align: center;
+}
+
+.contentTable{
+    border-collapse: collapse;
+    margin: 2em;
+    font-size: 2em;
+    min-width: 800px;
+}
+
+.contentTable thead tr{
+    background-color: #009879;
+    color:white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.contentTable td, .contentTable th{ 
+    padding: 12px, 15px;
+}
+
+.contentTable tbody tr{
+    border-bottom: 1px solid #ddd;
+    background-color: #fafafa;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
 }

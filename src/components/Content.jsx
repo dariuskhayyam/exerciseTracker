@@ -4,7 +4,7 @@ import Table from "./Table"
 class Content extends React.Component{
     render(){
         return(
-            <div>
+            <div className="container">
                 <Table />
             </div>
         )
