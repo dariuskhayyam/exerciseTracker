@@ -50,7 +50,7 @@ class Form extends React.Component{
 
     submitHandler = (e) => {
         e.preventDefault()
-        alert("hello there")
+        alert("hello there");
         let {date, pushups, squats, situps, pullups} = this.state
         this.props.loadData(this.state)
 
