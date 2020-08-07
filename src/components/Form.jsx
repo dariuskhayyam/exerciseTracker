@@ -6,10 +6,10 @@ class Form extends React.Component{
         super()
         this.state = {
             date: "",
-            pushUps: "",
+            pushups: "",
             squats : "",
-            sitUps : "",
-            pullUps : ""
+            situps : "",
+            pullups : ""
         }
     }
 
@@ -20,10 +20,10 @@ class Form extends React.Component{
         })
     }
 
-    pushUpsHandler = (event) => {
+    pushupsHandler = (event) => {
         let {value} = event.target
         this.setState({
-            pushUps: value
+            pushups: value
         })
     }
 
@@ -34,31 +34,47 @@ class Form extends React.Component{
         })
     }
 
-    sitUpsHandler = (event) => {
+    situpsHandler = (event) => {
         let {value} = event.target
         this.setState({
-            sitUps: value
+            situps: value
         })
     }
 
-    pullUpsHandler = (event) => {
+    pullupsHandler = (event) => {
         let {value} = event.target
         this.setState({
-            pullUps: value
+            pullups: value
         })
     }
 
     submitHandler = (e) => {
         e.preventDefault()
-        // let {date, pushUps, squats, sitUps, pullUps} = this.state
-        console.log(this.state)
+        let {date, pushups, squats, situps, pullups} = this.state
         this.props.loadData(this.state)
+
+        fetch("http://exercise1tracker1api.herokuapp.com//newWorkout", {
+            method: "POST",
+            headers: {
+               "Content-Type" : "application/json"
+            },
+            body: JSON.stringify({
+               date,
+               pushups,
+               squats,
+               situps,
+               pullups
+            })
+        })
+        .then(response => response.json)
+        .catch(err => console.log(err))
+
         this.setState({
             date: "",
-            pushUps: "",
+            pushups: "",
             squats : "",
-            sitUps : "",
-            pullUps : ""
+            situps : "",
+            pullups : ""
         })
     }
 
@@ -71,16 +87,16 @@ class Form extends React.Component{
                 <input type="date" onChange={this.dateHandler}/>
 
                 <label>Push Ups:</label>
-                <input type="text" onChange={this.pushUpsHandler} value={this.state.pushUps}/>
+                <input type="text" onChange={this.pushupsHandler} value={this.state.pushups}/>
 
                 <label>Squats:</label>
                 <input type="text" onChange={this.squatsHandler} value={this.state.squats}/>
 
                 <label>Sit Ups</label>
-                <input type="text" onChange={this.sitUpsHandler} value={this.state.sitUps}/>
+                <input type="text" onChange={this.situpsHandler} value={this.state.situps}/>
 
                 <label>Pull Ups:</label>
-                <input type="text" onChange={this.pullUpsHandler} value={this.state.pullUps}/>
+                <input type="text" onChange={this.pullupsHandler} value={this.state.pullups}/>
 
 
                 <button>Enter</button>

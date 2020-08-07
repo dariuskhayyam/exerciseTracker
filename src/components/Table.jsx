@@ -3,7 +3,8 @@ import React from "react"
 class Table extends React.Component{
     render(){
         
-        let {pushUps, squats, sitUps, pullUps, date} = this.props
+        let {pushups, squats, situps, pullups, date} = this.props
+        date = date.substring(0, 10)
 
         return(
             <div>
@@ -20,10 +21,10 @@ class Table extends React.Component{
                     <tbody>
                         <tr>
                             <td>{date}</td>
-                            <td>{pushUps}</td>
+                            <td>{pushups}</td>
                             <td>{squats}</td>
-                            <td>{sitUps}</td>
-                            <td>{pullUps}</td>
+                            <td>{situps}</td>
+                            <td>{pullups}</td>
                         </tr>
                     </tbody>
                     <br />

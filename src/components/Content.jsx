@@ -6,11 +6,12 @@ class Content extends React.Component{
     render(){
 
         let content = this.props.data.map(current => <Table 
+                    id = {current.id}
                     date = {current.date}
-                    pushUps = {current.pushUps}
+                    pushups = {current.pushups}
                     squats =  {current.squats}
-                    sitUps =  {current.sitUps}
-                    pullUps =  {current.pullUps}
+                    situps =  {current.situps}
+                    pullups =  {current.pullups}
                     />
                     
         )

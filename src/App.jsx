@@ -9,7 +9,7 @@ class App extends React.Component{
 
     constructor(){
         // eslint-disable-next-line
-        let {date, pushUps, squats, sitUps, pullUps} = data
+        let {date, pushups, squats, sitUps, pullups} = data
 
         super()
         this.state = {
@@ -19,18 +19,24 @@ class App extends React.Component{
         }
     }
 
-    loadData = (data) => {
+    componentDidMount() {
+        fetch("http://exercise1tracker1api.herokuapp.com/")
+        .then(response => response.json())
+        .then(workout => {
+            this.setState({workouts: workout.reverse()})
+        })
 
-        console.log(data)
 
-        let {date, pushUps, squats, sitUps, pullUps} = data
+    }
+
+    loadData = ({date, pushups, squats, situps, pullups}) => {
 
         let newWorkout = {
             date, 
-            pushUps, 
+            pushups, 
             squats, 
-            sitUps, 
-            pullUps
+            situps, 
+            pullups
         }
 
         let arr = this.state.workouts
