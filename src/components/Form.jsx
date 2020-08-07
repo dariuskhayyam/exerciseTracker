@@ -53,7 +53,7 @@ class Form extends React.Component{
         let {date, pushups, squats, situps, pullups} = this.state
         this.props.loadData(this.state)
 
-        fetch("http://exercise1tracker1api.herokuapp.com/newWorkout", {
+        fetch("https://exercise1tracker1api.herokuapp.com/newWorkout", {
             method: "POST",
             headers: {
                "Content-Type" : "application/json"

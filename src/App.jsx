@@ -20,7 +20,7 @@ class App extends React.Component{
     }
 
     componentDidMount() {
-        fetch("http://exercise1tracker1api.herokuapp.com/")
+        fetch("https://exercise1tracker1api.herokuapp.com/")
         .then(response => response.json())
         .then(workout => {
             this.setState({workouts: workout.reverse()})
